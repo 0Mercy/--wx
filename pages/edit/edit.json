@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "编辑",
+  "usingComponents": {
+    "toolbar": "/components/toolbar/toolbar"
+  },
+  "disableScroll": true
+}

@@ -1,0 +1,30 @@
+<view class="toolbar">
+  <view class="tool-group">
+    <view class="tool-btn {{canUndo ? '' : 'disabled'}}" bindtap="onUndo">
+      <view class="tool-icon">↩</view>
+      <view class="tool-label">撤销</view>
+    </view>
+    <view class="tool-btn {{canRedo ? '' : 'disabled'}}" bindtap="onRedo">
+      <view class="tool-icon">↪</view>
+      <view class="tool-label">重做</view>
+    </view>
+  </view>
+
+  <view class="tool-group main-actions">
+    <view class="action-btn corner-btn" bindtap="onRemoveCorner">
+      <view class="action-icon">⊟</view>
+      <view class="action-label">去除角标</view>
+    </view>
+    <view class="action-btn tiled-btn" bindtap="onRemoveTiled">
+      <view class="action-icon">⊞</view>
+      <view class="action-label">去除平铺</view>
+    </view>
+  </view>
+
+  <view class="tool-group">
+    <view class="tool-btn save" bindtap="onSave">
+      <view class="tool-icon">↓</view>
+      <view class="tool-label">保存</view>
+    </view>
+  </view>
+</view>

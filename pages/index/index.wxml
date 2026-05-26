@@ -1,0 +1,47 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-title">图片去水印</view>
+    <view class="header-sub">轻松去除角标、平铺水印</view>
+  </view>
+
+  <!-- 上传区域 -->
+  <view class="upload-section">
+    <view class="upload-card" bindtap="chooseImage">
+      <view class="upload-icon">+</view>
+      <view class="upload-text">选择图片</view>
+      <view class="upload-hint">支持 JPG / PNG / WEBP</view>
+    </view>
+  </view>
+
+  <!-- 历史记录 -->
+  <view class="history-section" wx:if="{{history.length > 0}}">
+    <view class="section-header">
+      <view class="section-title">最近处理</view>
+      <view class="section-action" bindtap="clearHistory">清空</view>
+    </view>
+
+    <view class="history-list">
+      <view
+        class="history-item"
+        wx:for="{{history}}"
+        wx:key="id"
+        bindtap="openHistory"
+        data-item="{{item}}"
+      >
+        <image class="history-thumb" src="{{item.thumbPath}}" mode="aspectFill" />
+        <view class="history-info">
+          <view class="history-date">{{item.date}}</view>
+          <view class="history-mode">{{item.mode === 'corner' ? '角标去除' : '平铺去除'}}</view>
+        </view>
+        <view class="history-delete" catchtap="deleteHistory" data-id="{{item.id}}">×</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <view class="empty-text">还没有处理记录</view>
+    <view class="empty-hint">选择一张图片开始吧</view>
+  </view>
+</view>

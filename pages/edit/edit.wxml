@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="image-container">
+    <!-- 图片用 image 组件显示，确保兼容性和比例正确 -->
+    <image
+      class="display-image"
+      src="{{displaySrc}}"
+      mode="aspectFit"
+      bindtouchstart="onTouchStart"
+      bindtouchend="onTouchEnd"
+    />
+    <view class="compare-hint" wx:if="{{comparing}}">原图</view>
+    <view class="mode-badge" wx:if="{{step === 'adjust'}}">调整强度</view>
+  </view>
+
+  <!-- Canvas 隐藏在屏幕外，仅用于像素处理 -->
+  <canvas
+    type="2d"
+    id="workCanvas"
+    class="work-canvas"
+  />
+
+  <!-- 平铺模式强度调节 -->
+  <view class="slider-panel" wx:if="{{step === 'adjust'}}">
+    <text class="slider-label">水印强度</text>
+    <slider
+      value="{{tiledAlpha}}"
+      min="5" max="60" step="1" show-value
+      block-size="18"
+      activeColor="#4e8cff"
+      backgroundColor="#2a2a4a"
+      bindchange="onAlphaChange"
+    />
+    <view class="slider-actions">
+      <view class="btn btn-outline" bindtap="cancelTiled">取消</view>
+      <view class="btn btn-primary" bindtap="applyTiled">应用</view>
+    </view>
+  </view>
+
+  <toolbar
+    canUndo="{{canUndo}}"
+    canRedo="{{canRedo}}"
+    bind:undo="undo"
+    bind:redo="redo"
+    bind:removeCorner="removeCorner"
+    bind:removeTiled="removeTiled"
+    bind:save="saveImage"
+  />
+</view>

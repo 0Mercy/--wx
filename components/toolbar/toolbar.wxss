@@ -1,0 +1,89 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  background: #1a1a2e;
+  border-top: 1rpx solid #2a2a4a;
+  gap: 16rpx;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.tool-group.main-actions {
+  flex: 1;
+  justify-content: center;
+  gap: 16rpx;
+}
+
+.tool-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rpx 12rpx;
+  border-radius: 12rpx;
+  min-width: 72rpx;
+}
+
+.tool-btn:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tool-btn.disabled {
+  opacity: 0.3;
+}
+
+.tool-icon {
+  font-size: 34rpx;
+  line-height: 1;
+  margin-bottom: 2rpx;
+  color: #e8e8f0;
+}
+
+.tool-label {
+  font-size: 18rpx;
+  color: #8b8ba7;
+}
+
+.tool-btn.save .tool-icon {
+  color: #2ed573;
+}
+
+/* 主操作按钮 */
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 24rpx;
+  flex: 1;
+  justify-content: center;
+  max-width: 200rpx;
+}
+
+.action-btn:active {
+  opacity: 0.8;
+}
+
+.corner-btn {
+  background: #4e8cff;
+}
+
+.tiled-btn {
+  background: #ff6b9d;
+}
+
+.action-icon {
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.action-label {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: 500;
+}

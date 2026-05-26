@@ -1,0 +1,22 @@
+# 微信开发者工具个人配置
+project.private.config.json
+
+# 依赖
+node_modules/
+miniprogram_npm/
+
+# 打包输出
+dist/
+build/
+
+# 云函数（如有）
+cloudfunctions/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 环境变量
+.env
+.env.local
+.env.production
